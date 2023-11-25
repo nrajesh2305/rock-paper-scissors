@@ -27,6 +27,7 @@ function getComputerChoice()
         - Paper beats rock
         - If both are equal, tie, continue.
 */
+// This works now.
 function playRound(playerSelection, computerSelection)
 {
     // Convert both player and computer selections to a case that works within our case sensitivities.
@@ -62,5 +63,3 @@ function playRound(playerSelection, computerSelection)
     }
     return "None";
 }
-
-console.log(playRound("Rock", "Scissors"));
