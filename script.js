@@ -4,7 +4,7 @@
 /*
     1. Generate a random number between 1 and 3.
     2. Use the random number to choose the value of the choice the computer chose.
-    3. We can do this in 2 lines if we wanted to.
+    3. We can do this in 3 lines if we wanted to.
 */
 // This works now.
 function getComputerChoice()
@@ -92,7 +92,7 @@ function game()
     }
     if(playerScore == computerScore)
     {
-        console.log("The game is a tie!d");
+        console.log("The game is a tie!");
     }
     else if(playerScore > computerScore)
     {
@@ -103,5 +103,3 @@ function game()
         console.log("You Lost!\nComputer Score: " + computerScore + "\tPlayer Score: " + playerScore + "\n____________________________");
     }
 }
-
-game();
