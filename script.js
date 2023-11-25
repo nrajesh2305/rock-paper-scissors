@@ -47,7 +47,7 @@ function playRound(playerSelection, computerSelection)
     }
     else if(playerChoice == "Paper" && computerChoice == "Rock")
     {
-        return "You Win! Paper beats Rock";
+        return "You Win! Paper beats Rock!";
     }
     else if(playerChoice == "Paper" && computerChoice == "Scissors")
     {
@@ -55,7 +55,7 @@ function playRound(playerSelection, computerSelection)
     }
     else if(playerChoice == "Scissors" && computerChoice == "Paper")
     {
-        return "You Win! Scissors beats Paper";
+        return "You Win! Scissors beats Paper!";
     }
     else if(playerChoice == "Scissors" && computerChoice == "Rock")
     {
@@ -63,3 +63,45 @@ function playRound(playerSelection, computerSelection)
     }
     return "None";
 }
+
+// Uses the previous function inside of this one to play a 5 round game
+// that keeps score and reports a winner and loser at the end.
+/*
+    1. Calls playRound 5 times in a row. May or may not need to use a loop.
+    2. Use console.log() to display the results of each round and the winner at the end.
+    3. Ask the user to choose what they want to play. Use prompt to get input from the user.
+ */
+function game()
+{
+    let playerScore = 0;
+    let computerScore = 0;
+
+    for(let i = 0; i < 5; i++)
+    {
+        let playerChoice = prompt("What would you like to play (Rock, Paper, Scissors): ");
+        let computerChoice = getComputerChoice();
+        let message = playRound(playerChoice, computerChoice);
+        if(message.includes("Win"))
+        {
+            playerScore++;
+        }
+        else if(message.includes("Lose"))
+        {
+            computerScore++;
+        }
+    }
+    if(playerScore == computerScore)
+    {
+        console.log("The game is a tie!d");
+    }
+    else if(playerScore > computerScore)
+    {
+        console.log("You won!\nPlayer Score: " + playerScore + "\tComputer Score: " + computerScore + "\n____________________________");
+    }
+    else
+    {
+        console.log("You Lost!\nComputer Score: " + computerScore + "\tPlayer Score: " + playerScore + "\n____________________________");
+    }
+}
+
+game();
