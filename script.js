@@ -102,19 +102,3 @@ function game()
 
 // Now that we are in the UI_Rock_Paper_Scissors branch, we have to push to this branch using the command: git push origin UI_Rock_Paper_Scissors
 
-
-// Let's start with making our three buttons.
-
-// const button1 = document.querySelector("#button1");
-// button1.style.backgroundColor = "white";
-// button1.style.color = "red";
-
-// const button2 = document.querySelector("#button2");
-// button2.style.backgroundColor = "white";
-// button2.style.color = "green";
-
-// const button3 = document.querySelector("#button3");
-// button3.style.backgroundColor = "white";
-// button3.style.color = "blue";
-
-// const container = document.querySelector("#container");
