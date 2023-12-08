@@ -132,3 +132,23 @@ the colors of each button as a result.
     width: 100%;
     border-radius: 50%;
 }
+
+.user-play
+{
+    display: flex;
+    border-radius: 50%;
+    width: 35%;
+    margin-top: 12.5%;
+    margin-left: 19%;
+    position: absolute;
+}
+
+.computer-play
+{
+    display: flex;
+    border-radius: 50%;
+    width: 35%;
+    margin-top: 12.5%;
+    margin-left: 45%;
+    position: absolute;
+}
