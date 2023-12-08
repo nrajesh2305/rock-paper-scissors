@@ -114,3 +114,22 @@ the colors of each button as a result.
     font-size: larger;
     color: #1e1e1e;
 }
+
+.rock
+{
+    border-radius: 50%;
+    width: 100%;
+}
+
+.paper
+{
+    border-radius: 50%;
+    width: 100%;
+}
+
+.scissors
+{
+    width: 100%;
+    border-radius: 50%;
+    background-color: #FCFCEC;
+}
