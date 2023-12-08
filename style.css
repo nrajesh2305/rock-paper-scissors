@@ -1,0 +1,116 @@
+body
+{
+    display: flex;
+    background-color: tan;
+    margin: 0;
+    width: 1190px;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+/* This will be our entire board, which will hold all of our containers. */
+.general-container
+{
+    background-color: #f9be96;
+    border: 10px solid #69543c;
+    width: 100%;
+    height: 100%;
+}
+
+
+.top-inside-container
+{
+    width: 1210px;
+    height: 375px;
+    position: absolute;
+}
+
+/* Reset the game with this button */
+.reset-button
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9be96;
+    border: 5px solid #69543c;
+    width: 15%;
+    height: 10%;
+    margin-top: 0.2%;
+    margin-left: 40%;
+    color: red;
+    font-size: 30px;
+    position: absolute;
+}
+
+/* 3 Buttons have a lot in common, so in order to code this card, we can just use the simple format, then we can manipulate the DOM to change
+the colors of each button as a result.
+*/
+
+.choice-container
+{
+    display: flex;
+    width: 1190px;
+    height: 250px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 35%;
+}
+
+.choice-button
+{
+    display: inline-block;
+    background-color: #FCFCEC;
+    border-radius: 50%;
+    border: 10px solid black;
+    width: 225px;
+    height: 225px;
+}
+
+.vs-container
+{
+    display: flex;
+    width: 30px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 48%;
+    margin-top: 20%;
+    color: red;
+    background-color: yellow;
+    font-weight: bold;
+    /* We can use position: absolute to make sure we want to affect only this container, not other containers. */
+    position: absolute;
+}
+
+.score-card-container
+{
+    display: flex;
+    width: 254px;
+    height: 153px;
+    border: 10px solid #69543c;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.score-card-container-second
+{
+    display: flex;
+    width: 254px;
+    height: 153px;
+    border: 10px solid #69543c;
+    position: absolute;
+    margin-left: 76.5%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.score-cards
+{
+    font-size: larger;
+    color: #1e1e1e;
+}
