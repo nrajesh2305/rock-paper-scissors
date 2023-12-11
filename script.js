@@ -124,13 +124,29 @@ let computer_score = 0;
 
 const scorePlayerElement = document.querySelector("#playerScore");
 const scoreComputerElement = document.querySelector("#computerScore");
+const emptyChoice = document.querySelector("#empty");
 
-const resetElement = document.querySelector("#reset");
+const resetButton = document.querySelector("#reset");
 
+const rockImage = document.querySelector("#rock");
 
-resetElement.addEventListener("click", function resetGame() {
+resetButton.addEventListener("click", function resetGame() 
+{
     player_score = 0;
     computer_score = 0;
     scorePlayerElement.textContent = player_score;
     scoreComputerElement.textContent = computer_score;
+});
+
+
+// Set the plates to the choice chosen by the user. Then after this we call on a function that will choose a random choice for computer. Then we decide winner.
+// After that, the logic is done, put it all together. We are good then.
+
+// After we do that, then we can work on the styles, to make sure everything is pixel perfect, and then submit. :)
+rockImage.addEventListener("click", function setPlayerImage()
+{
+    if(rockImage)
+    {
+        emptyChoice.id = "#rock";
+    }
 });
