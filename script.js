@@ -100,5 +100,37 @@ function game()
     }
 }
 
+function updatePlayerScore()
+{
+    player_score++;
+    scorePlayerElement.textContent = player_score;
+}
+
+function updateComputerScore()
+{
+    computer_score++;
+    scoreComputerElement.textContent = computer_score;
+}
+
+
+
 // Now that we are in the UI_Rock_Paper_Scissors branch, we have to push to this branch using the command: git push origin UI_Rock_Paper_Scissors
 
+// Tomorrow, start by fixing the zoom in and out, and fitting everything, we can do this after finishing scripting though! :)
+// Then, we are done with HTML and CSS stuff, we can then move on to scripting the final product. Good luck Nithin! :)
+
+let player_score = 0;
+let computer_score = 0;
+
+const scorePlayerElement = document.querySelector("#playerScore");
+const scoreComputerElement = document.querySelector("#computerScore");
+
+const resetElement = document.querySelector("#reset");
+
+
+resetElement.addEventListener("click", function resetGame() {
+    player_score = 0;
+    computer_score = 0;
+    scorePlayerElement.textContent = player_score;
+    scoreComputerElement.textContent = computer_score;
+});

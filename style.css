@@ -38,7 +38,7 @@ body
     background-color: #f9be96;
     border: 5px solid #69543c;
     width: 15%;
-    height: 10%;
+    height: 11%;
     margin-top: 0.2%;
     margin-left: 40%;
     color: red;
@@ -110,7 +110,7 @@ the colors of each button as a result.
     transform: translateX(925px);
 }
 
-.score-cards
+.score_cards
 {
     font-size: larger;
     color: #1e1e1e;
