@@ -7,12 +7,14 @@ body
     height: 100%;
     padding: 0;
     overflow: hidden;
-    
+    min-width: fit-content;
 }
 
 /* This will be our entire board, which will hold all of our containers. */
 .general-container
 {
+    display: flex;
+    flex-grow: 1;
     background-color: #f9be96;
     border: 10px solid #69543c;
     width: 100%;
@@ -75,7 +77,7 @@ the colors of each button as a result.
     height: 25px;
     justify-content: center;
     align-items: center;
-    margin-left: 48%;
+    margin-left: 47%;
     margin-top: 20%;
     color: red;
     background-color: yellow;
@@ -94,26 +96,18 @@ the colors of each button as a result.
     justify-content: center;
     align-items: center;
     transform: translateX(-10px);
-    
 }
 
 .score-card-container-second
 {
     display: flex;
-    width: 100%;
+    width: 254px;
     height: 153px;
     position: absolute;
-    margin-right: 10px;
-    justify-content: right;
-    .score-cards {
-        width: 254px;
-        height: inherit;
-        border: 10px solid #69543c;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
+    border: 10px solid #69543c;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(925px);
 }
 
 .score-cards
