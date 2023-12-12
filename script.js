@@ -10,7 +10,7 @@
 function getComputerChoice()
 {
     // These are our choices.
-    let choices = ["Rock", "Paper", "Scissors"];
+    let choices = ["rock.png", "paper.png", "scissors.png"];
     // Generate a random number between 1 & 3. ints only
     let computer_choice = Math.floor(Math.random() * 3);
     return choices[computer_choice];
@@ -142,6 +142,8 @@ resetButton.addEventListener("click", function resetGame()
 // After we do that, then we can work on the styles, to make sure everything is pixel perfect, and then submit. :)
 
 const emptyChoice = document.querySelector("#empty");
+const emptyComputerChoice = document.querySelector("#emptyComputer");
+
 const rockChoice = document.querySelector("#rock");
 const paperChoice = document.querySelector("#paper");
 const scissorsChoice = document.querySelector("#scissors");
@@ -149,14 +151,17 @@ const scissorsChoice = document.querySelector("#scissors");
 rockChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "rock.png";
+    emptyComputerChoice.src = getComputerChoice();
 });
 
 paperChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "paper.png";
+    emptyComputerChoice.src = getComputerChoice();
 });
 
 scissorsChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "scissors.png";
+    emptyComputerChoice.src = getComputerChoice();
 });
