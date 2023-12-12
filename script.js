@@ -30,74 +30,36 @@ function getComputerChoice()
 // This works now.
 function playRound(playerSelection, computerSelection)
 {
-    // Convert both player and computer selections to a case that works within our case sensitivities.
-    let playerChoice = playerSelection.charAt(0).toUpperCase().concat(playerSelection.slice(1, playerSelection.length).toLowerCase());
-    let computerChoice = computerSelection.charAt(0).toUpperCase().concat(computerSelection.slice(1, computerSelection.length).toLowerCase());
-    if(playerChoice == computerChoice)
+
+    if(playerSelection == computerSelection)
     {
         return "It's a tie!";
     }
-    if(playerChoice == "Rock" && computerChoice == "Scissors")
+    if(playerSelection == rockChoice && computerSelection == scissorsChoice)
     {
         return "You Win! Rock beats Scissors!";
     }
-    else if(playerChoice == "Rock" && computerChoice == "Paper")
+    else if(playerSelection == rockChoice && computerSelection == paperChoice)
     {
         return "You Lose! Paper beats Rock";
     }
-    else if(playerChoice == "Paper" && computerChoice == "Rock")
+    else if(playerSelection == paperChoice && computerSelection == rockChoice)
     {
         return "You Win! Paper beats Rock!";
     }
-    else if(playerChoice == "Paper" && computerChoice == "Scissors")
+    else if(playerSelection == paperChoice && computerSelection == scissorsChoice)
     {
         return "You Lose! Scissors beats Paper";
     }
-    else if(playerChoice == "Scissors" && computerChoice == "Paper")
+    else if(playerSelection == scissorsChoice && computerSelection == paperChoice)
     {
         return "You Win! Scissors beats Paper!";
     }
-    else if(playerChoice == "Scissors" && computerChoice == "Rock")
+    else if(playerSelection == scissorsChoice && computerSelection == rockChoice)
     {
         return "You Lose! Rock beats Scissors";
     }
-    return "None";
-}
-
-// Uses the previous function inside of this one to play a 5 round game
-// that keeps score and reports a winner and loser at the end.
-/*
-    1. Calls playRound 5 times in a row. May or may not need to use a loop.
-    2. Use console.log() to display the results of each round and the winner at the end.
-    3. Ask the user to choose what they want to play. Use prompt to get input from the user.
- */
-function game()
-{
-    let playerScore = 0;
-    let computerScore = 0;
-    let playerChoice = prompt("What would you like to play (Rock, Paper, Scissors): ");
-    let computerChoice = getComputerChoice();
-    let message = playRound(playerChoice, computerChoice);
-    if(message.includes("Win"))
-    {
-        playerScore++;
-    }
-    else if(message.includes("Lose"))
-    {
-        computerScore++;
-    }
-    if(playerScore == computerScore)
-    {
-        console.log("The game is a tie!");
-    }
-    else if(playerScore > computerScore)
-    {
-        console.log("You won!\nPlayer Score: " + playerScore + "\tComputer Score: " + computerScore + "\n____________________________");
-    }
-    else
-    {
-        console.log("You Lost!\nComputer Score: " + computerScore + "\tPlayer Score: " + playerScore + "\n____________________________");
-    }
+    return "Nones";
 }
 
 function updatePlayerScore()
@@ -110,6 +72,39 @@ function updateComputerScore()
 {
     computer_score++;
     scoreComputerElement.textContent = computer_score;
+}
+
+// Uses the previous function inside of this one to play a 5 round game
+// that keeps score and reports a winner and loser at the end.
+/*
+    1. Calls playRound 5 times in a row. May or may not need to use a loop.
+    2. Use console.log() to display the results of each round and the winner at the end.
+    3. Ask the user to choose what they want to play. Use prompt to get input from the user.
+ */
+function game(emptyChoice, emptyComputerChoice)
+{
+    let message = playRound(emptyChoice, emptyComputerChoice);
+    console.log(message);
+    if(message.includes("Win"))
+    {
+        updatePlayerScore();
+    }
+    else if(message.includes("Lose"))
+    {
+        updateComputerScore();
+    }
+    // if(player_score == computer_score)
+    // {
+    //     console.log("The game is a tie!");
+    // }
+    // else if(player_score > computer_score)
+    // {
+    //     console.log("You won!\nPlayer Score: " + player_score + "\tComputer Score: " + computer_score + "\n____________________________");
+    // }
+    // else
+    // {
+    //     console.log("You Lost!\nComputer Score: " + computer_score + "\tPlayer Score: " + player_score + "\n____________________________");
+    // }
 }
 
 
@@ -146,7 +141,7 @@ resetButton.addEventListener("click", function resetGame()
 const emptyChoice = document.querySelector("#empty");
 const emptyComputerChoice = document.querySelector("#emptyComputer");
 
-const rockChoice = document.querySelector("#rock");
+let rockChoice = document.querySelector("#rock");
 const paperChoice = document.querySelector("#paper");
 const scissorsChoice = document.querySelector("#scissors");
 
@@ -154,16 +149,20 @@ rockChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "rock.png";
     emptyComputerChoice.src = getComputerChoice();
+    game(emptyChoice, emptyComputerChoice);
+    
 });
 
 paperChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "paper.png";
     emptyComputerChoice.src = getComputerChoice();
+    game(emptyChoice, emptyComputerChoice);
 });
 
 scissorsChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "scissors.png";
     emptyComputerChoice.src = getComputerChoice();
+    game(emptyChoice, emptyComputerChoice);
 });
