@@ -124,11 +124,8 @@ let computer_score = 0;
 
 const scorePlayerElement = document.querySelector("#playerScore");
 const scoreComputerElement = document.querySelector("#computerScore");
-const emptyChoice = document.querySelector("#empty");
 
 const resetButton = document.querySelector("#reset");
-
-const rockImage = document.querySelector("#rock");
 
 resetButton.addEventListener("click", function resetGame() 
 {
@@ -143,10 +140,23 @@ resetButton.addEventListener("click", function resetGame()
 // After that, the logic is done, put it all together. We are good then.
 
 // After we do that, then we can work on the styles, to make sure everything is pixel perfect, and then submit. :)
-rockImage.addEventListener("click", function setPlayerImage()
+
+const emptyChoice = document.querySelector("#empty");
+const rockChoice = document.querySelector("#rock");
+const paperChoice = document.querySelector("#paper");
+const scissorsChoice = document.querySelector("#scissors");
+
+rockChoice.addEventListener("click", function setPlayerImage()
 {
-    if(rockImage)
-    {
-        emptyChoice.id = "#rock";
-    }
+    emptyChoice.src = "rock.png";
+});
+
+paperChoice.addEventListener("click", function setPlayerImage()
+{
+    emptyChoice.src = "paper.png";
+});
+
+scissorsChoice.addEventListener("click", function setPlayerImage()
+{
+    emptyChoice.src = "scissors.png";
 });

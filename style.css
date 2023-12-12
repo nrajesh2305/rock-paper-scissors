@@ -120,6 +120,7 @@ the colors of each button as a result.
 {
     border-radius: 50%;
     width: 100%;
+    background: transparent;
 }
 
 .paper
