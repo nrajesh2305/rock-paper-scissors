@@ -133,6 +133,8 @@ resetButton.addEventListener("click", function resetGame()
     computer_score = 0;
     scorePlayerElement.textContent = player_score;
     scoreComputerElement.textContent = computer_score;
+    emptyChoice.src = "plate.png";
+    emptyComputerChoice.src = "plate.png";
 });
 
 
