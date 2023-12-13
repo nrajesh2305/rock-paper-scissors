@@ -10,7 +10,7 @@
 function getComputerChoice()
 {
     // These are our choices.
-    let choices = ["rock.png", "paper.png", "scissors.png"];
+    let choices = ["rock", "paper", "scissors"];
     // Generate a random number between 1 & 3. ints only
     let computer_choice = Math.floor(Math.random() * 3);
     return choices[computer_choice];
@@ -30,36 +30,38 @@ function getComputerChoice()
 // This works now.
 function playRound(playerSelection, computerSelection)
 {
+    let playerChoice = playerSelection.charAt(0).toUpperCase().concat(playerSelection.slice(1, playerSelection.length).toLowerCase());
+    let computerChoice = computerSelection.charAt(0).toUpperCase().concat(computerSelection.slice(1, computerSelection.length).toLowerCase());
 
-    if(playerSelection == computerSelection)
+    if(playerChoice === computerChoice)
     {
         return "It's a tie!";
     }
-    if(playerSelection == rockChoice && computerSelection == scissorsChoice)
+    if(playerChoice == "Rock" && computerChoice == "Scissors")
     {
         return "You Win! Rock beats Scissors!";
     }
-    else if(playerSelection == rockChoice && computerSelection == paperChoice)
+    else if(playerChoice == "Rock" && computerChoice == "Paper")
     {
         return "You Lose! Paper beats Rock";
     }
-    else if(playerSelection == paperChoice && computerSelection == rockChoice)
+    else if(playerChoice == "Paper" && computerChoice == "Rock")
     {
         return "You Win! Paper beats Rock!";
     }
-    else if(playerSelection == paperChoice && computerSelection == scissorsChoice)
+    else if(playerChoice == "Paper" && computerChoice == "Scissors")
     {
         return "You Lose! Scissors beats Paper";
     }
-    else if(playerSelection == scissorsChoice && computerSelection == paperChoice)
+    else if(playerChoice == "Scissors" && computerChoice == "Paper")
     {
         return "You Win! Scissors beats Paper!";
     }
-    else if(playerSelection == scissorsChoice && computerSelection == rockChoice)
+    else if(playerChoice == "Scissors" && computerChoice == "Rock")
     {
         return "You Lose! Rock beats Scissors";
     }
-    return "Nones";
+    return "None";
 }
 
 function updatePlayerScore()
@@ -93,18 +95,6 @@ function game(emptyChoice, emptyComputerChoice)
     {
         updateComputerScore();
     }
-    // if(player_score == computer_score)
-    // {
-    //     console.log("The game is a tie!");
-    // }
-    // else if(player_score > computer_score)
-    // {
-    //     console.log("You won!\nPlayer Score: " + player_score + "\tComputer Score: " + computer_score + "\n____________________________");
-    // }
-    // else
-    // {
-    //     console.log("You Lost!\nComputer Score: " + computer_score + "\tPlayer Score: " + player_score + "\n____________________________");
-    // }
 }
 
 
@@ -141,28 +131,28 @@ resetButton.addEventListener("click", function resetGame()
 const emptyChoice = document.querySelector("#empty");
 const emptyComputerChoice = document.querySelector("#emptyComputer");
 
-let rockChoice = document.querySelector("#rock");
+const rockChoice = document.querySelector("#rock");
 const paperChoice = document.querySelector("#paper");
 const scissorsChoice = document.querySelector("#scissors");
 
 rockChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "rock.png";
-    emptyComputerChoice.src = getComputerChoice();
-    game(emptyChoice, emptyComputerChoice);
+    emptyComputerChoice.src = getComputerChoice() + ".png";
+    game("rock", getComputerChoice());
     
 });
 
 paperChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "paper.png";
-    emptyComputerChoice.src = getComputerChoice();
-    game(emptyChoice, emptyComputerChoice);
+    emptyComputerChoice.src = getComputerChoice() + ".png";
+    game("paper", getComputerChoice());
 });
 
 scissorsChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "scissors.png";
-    emptyComputerChoice.src = getComputerChoice();
-    game(emptyChoice, emptyComputerChoice);
+    emptyComputerChoice.src = getComputerChoice() + ".png";
+    game("scissors", getComputerChoice());
 });
