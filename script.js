@@ -37,27 +37,27 @@ function playRound(playerSelection, computerSelection)
     {
         return "It's a tie!";
     }
-    if(playerChoice == "Rock" && computerChoice == "Scissors")
+    if(playerChoice === "Rock" && computerChoice === "Scissors")
     {
         return "You Win! Rock beats Scissors!";
     }
-    else if(playerChoice == "Rock" && computerChoice == "Paper")
+    else if(playerChoice === "Rock" && computerChoice === "Paper")
     {
         return "You Lose! Paper beats Rock";
     }
-    else if(playerChoice == "Paper" && computerChoice == "Rock")
+    else if(playerChoice === "Paper" && computerChoice === "Rock")
     {
         return "You Win! Paper beats Rock!";
     }
-    else if(playerChoice == "Paper" && computerChoice == "Scissors")
+    else if(playerChoice === "Paper" && computerChoice === "Scissors")
     {
         return "You Lose! Scissors beats Paper";
     }
-    else if(playerChoice == "Scissors" && computerChoice == "Paper")
+    else if(playerChoice === "Scissors" && computerChoice === "Paper")
     {
         return "You Win! Scissors beats Paper!";
     }
-    else if(playerChoice == "Scissors" && computerChoice == "Rock")
+    else if(playerChoice === "Scissors" && computerChoice === "Rock")
     {
         return "You Lose! Rock beats Scissors";
     }
@@ -86,14 +86,15 @@ function updateComputerScore()
 function game(emptyChoice, emptyComputerChoice)
 {
     let message = playRound(emptyChoice, emptyComputerChoice);
-    console.log(message);
     if(message.includes("Win"))
     {
         updatePlayerScore();
+        return;
     }
     else if(message.includes("Lose"))
     {
         updateComputerScore();
+        return;
     }
 }
 
@@ -138,21 +139,24 @@ const scissorsChoice = document.querySelector("#scissors");
 rockChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "rock.png";
+    const theComputerChoice = getComputerChoice();
     emptyComputerChoice.src = getComputerChoice() + ".png";
-    game("rock", getComputerChoice());
+    game("rock", theComputerChoice);
     
 });
 
 paperChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "paper.png";
+    const theComputerChoice = getComputerChoice();
     emptyComputerChoice.src = getComputerChoice() + ".png";
-    game("paper", getComputerChoice());
+    game("paper", theComputerChoice);
 });
 
 scissorsChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "scissors.png";
+    const theComputerChoice = getComputerChoice();
     emptyComputerChoice.src = getComputerChoice() + ".png";
-    game("scissors", getComputerChoice());
+    game("scissors", theComputerChoice);
 });
