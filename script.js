@@ -69,10 +69,12 @@ function highlightWinner()
     if(player_score > computer_score)
     {
         scorePlayerElement.style.color = "green";
+        playerContainer.style.color = "green";
     }
     if(player_score < computer_score)
     {
         scoreComputerElement.style.color = "green";
+        computerContainer.style.color = "green";
     }
 }
 
@@ -135,6 +137,8 @@ resetButton.addEventListener("click", function resetGame()
     emptyComputerChoice.src = "plate.png";
     scorePlayerElement.style.color = "#1e1e1e";
     scoreComputerElement.style.color = "#1e1e1e";
+    playerContainer.style.color = "#1e1e1e";
+    computerContainer.style.color = "#1e1e1e";
 
 });
 
