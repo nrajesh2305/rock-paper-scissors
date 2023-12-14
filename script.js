@@ -142,7 +142,6 @@ rockChoice.addEventListener("click", function setPlayerImage()
     const theComputerChoice = getComputerChoice();
     emptyComputerChoice.src = theComputerChoice + ".png";
     game("rock", theComputerChoice);
-    
 });
 
 paperChoice.addEventListener("click", function setPlayerImage()

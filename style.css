@@ -70,6 +70,12 @@ the colors of each button as a result.
     height: 225px;
 }
 
+.choice-button:hover
+{
+    background-color: green;
+}
+
+
 .vs-container
 {
     display: flex;
