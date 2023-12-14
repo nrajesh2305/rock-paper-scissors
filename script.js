@@ -43,7 +43,7 @@ function playRound(playerSelection, computerSelection)
     }
     else if(playerChoice === "Rock" && computerChoice === "Paper")
     {
-        return "You Lose! Paper beats Rock";
+        return "You Lose! Paper beats Rock!";
     }
     else if(playerChoice === "Paper" && computerChoice === "Rock")
     {
@@ -51,7 +51,7 @@ function playRound(playerSelection, computerSelection)
     }
     else if(playerChoice === "Paper" && computerChoice === "Scissors")
     {
-        return "You Lose! Scissors beats Paper";
+        return "You Lose! Scissors beats Paper!";
     }
     else if(playerChoice === "Scissors" && computerChoice === "Paper")
     {
@@ -59,7 +59,7 @@ function playRound(playerSelection, computerSelection)
     }
     else if(playerChoice === "Scissors" && computerChoice === "Rock")
     {
-        return "You Lose! Rock beats Scissors";
+        return "You Lose! Rock beats Scissors!";
     }
     return "None";
 }
@@ -140,7 +140,7 @@ rockChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "rock.png";
     const theComputerChoice = getComputerChoice();
-    emptyComputerChoice.src = getComputerChoice() + ".png";
+    emptyComputerChoice.src = theComputerChoice + ".png";
     game("rock", theComputerChoice);
     
 });
@@ -149,7 +149,7 @@ paperChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "paper.png";
     const theComputerChoice = getComputerChoice();
-    emptyComputerChoice.src = getComputerChoice() + ".png";
+    emptyComputerChoice.src = theComputerChoice + ".png";
     game("paper", theComputerChoice);
 });
 
@@ -157,6 +157,6 @@ scissorsChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "scissors.png";
     const theComputerChoice = getComputerChoice();
-    emptyComputerChoice.src = getComputerChoice() + ".png";
+    emptyComputerChoice.src = theComputerChoice + ".png";
     game("scissors", theComputerChoice);
 });
