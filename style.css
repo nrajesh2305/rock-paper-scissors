@@ -46,6 +46,11 @@ body
     position: absolute;
 }
 
+.reset-button:hover
+{
+    font-weight: bolder;
+}
+
 /* 3 Buttons have a lot in common, so in order to code this card, we can just use the simple format, then we can manipulate the DOM to change
 the colors of each button as a result.
 */
