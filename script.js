@@ -64,6 +64,18 @@ function playRound(playerSelection, computerSelection)
     return "None";
 }
 
+function highlightWinner()
+{
+    if(player_score > computer_score)
+    {
+        scorePlayerElement.style.color = "green";
+    }
+    if(player_score < computer_score)
+    {
+        scoreComputerElement.style.color = "green";
+    }
+}
+
 function updatePlayerScore()
 {
     player_score++;
@@ -121,6 +133,9 @@ resetButton.addEventListener("click", function resetGame()
     scoreComputerElement.textContent = computer_score;
     emptyChoice.src = "plate.png";
     emptyComputerChoice.src = "plate.png";
+    scorePlayerElement.style.color = "#1e1e1e";
+    scoreComputerElement.style.color = "#1e1e1e";
+
 });
 
 
@@ -136,12 +151,19 @@ const rockChoice = document.querySelector("#rock");
 const paperChoice = document.querySelector("#paper");
 const scissorsChoice = document.querySelector("#scissors");
 
+const playerContainer = document.querySelector("#player");
+const computerContainer = document.querySelector("#computer");
+
 rockChoice.addEventListener("click", function setPlayerImage()
 {
     emptyChoice.src = "rock.png";
     const theComputerChoice = getComputerChoice();
     emptyComputerChoice.src = theComputerChoice + ".png";
     game("rock", theComputerChoice);
+    if(player_score === 3 || computer_score === 3)
+    {
+        highlightWinner();
+    }
 });
 
 paperChoice.addEventListener("click", function setPlayerImage()
@@ -150,6 +172,10 @@ paperChoice.addEventListener("click", function setPlayerImage()
     const theComputerChoice = getComputerChoice();
     emptyComputerChoice.src = theComputerChoice + ".png";
     game("paper", theComputerChoice);
+    if(player_score === 3 || computer_score === 3)
+    {
+        highlightWinner();
+    }
 });
 
 scissorsChoice.addEventListener("click", function setPlayerImage()
@@ -158,4 +184,8 @@ scissorsChoice.addEventListener("click", function setPlayerImage()
     const theComputerChoice = getComputerChoice();
     emptyComputerChoice.src = theComputerChoice + ".png";
     game("scissors", theComputerChoice);
+    if(player_score === 3 || computer_score === 3)
+    {
+        highlightWinner();
+    }
 });
