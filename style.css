@@ -72,7 +72,7 @@ the colors of each button as a result.
 
 .choice-button:hover
 {
-    background-color: green;
+    border-color: green;
 }
 
 
