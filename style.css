@@ -78,6 +78,7 @@ the colors of each button as a result.
 .choice-button:hover
 {
     border-color: green;
+    cursor: pointer;
 }
 
 
@@ -126,6 +127,8 @@ the colors of each button as a result.
     font-size: larger;
     color: #1e1e1e;
 }
+
+
 
 .rock
 {
