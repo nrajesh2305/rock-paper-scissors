@@ -49,6 +49,7 @@ body
 .reset-button:hover
 {
     font-weight: bolder;
+    cursor: pointer;
 }
 
 /* 3 Buttons have a lot in common, so in order to code this card, we can just use the simple format, then we can manipulate the DOM to change
