@@ -76,6 +76,7 @@ function highlightWinner()
         scoreComputerElement.style.color = "green";
         computerContainer.style.color = "green";
     }
+    is_game_on = false;
 }
 
 function updatePlayerScore()
@@ -121,6 +122,7 @@ function game(emptyChoice, emptyComputerChoice)
 
 let player_score = 0;
 let computer_score = 0;
+let is_game_on = true;
 
 const scorePlayerElement = document.querySelector("#playerScore");
 const scoreComputerElement = document.querySelector("#computerScore");
@@ -131,6 +133,7 @@ resetButton.addEventListener("click", function resetGame()
 {
     player_score = 0;
     computer_score = 0;
+    is_game_on = true;
     scorePlayerElement.textContent = player_score;
     scoreComputerElement.textContent = computer_score;
     emptyChoice.src = "plate.png";
@@ -160,36 +163,42 @@ const computerContainer = document.querySelector("#computer");
 
 rockChoice.addEventListener("click", function setPlayerImage()
 {
-    emptyChoice.src = "rock.png";
-    const theComputerChoice = getComputerChoice();
-    emptyComputerChoice.src = theComputerChoice + ".png";
-    game("rock", theComputerChoice);
-    if(player_score === 3 || computer_score === 3)
-    {
-        highlightWinner();
+    if(is_game_on) {
+        emptyChoice.src = "rock.png";
+        const theComputerChoice = getComputerChoice();
+        emptyComputerChoice.src = theComputerChoice + ".png";
+        game("rock", theComputerChoice);
+        if(player_score === 5 || computer_score === 5)
+        {
+            highlightWinner();
+        }
     }
 });
 
 paperChoice.addEventListener("click", function setPlayerImage()
 {
-    emptyChoice.src = "paper.png";
-    const theComputerChoice = getComputerChoice();
-    emptyComputerChoice.src = theComputerChoice + ".png";
-    game("paper", theComputerChoice);
-    if(player_score === 3 || computer_score === 3)
-    {
-        highlightWinner();
+    if(is_game_on) {
+        emptyChoice.src = "paper.png";
+        const theComputerChoice = getComputerChoice();
+        emptyComputerChoice.src = theComputerChoice + ".png";
+        game("paper", theComputerChoice);
+        if(player_score === 5 || computer_score === 5)
+        {
+            highlightWinner();
+        }
     }
 });
 
 scissorsChoice.addEventListener("click", function setPlayerImage()
 {
-    emptyChoice.src = "scissors.png";
-    const theComputerChoice = getComputerChoice();
-    emptyComputerChoice.src = theComputerChoice + ".png";
-    game("scissors", theComputerChoice);
-    if(player_score === 3 || computer_score === 3)
-    {
-        highlightWinner();
+    if(is_game_on) {
+        emptyChoice.src = "scissors.png";
+        const theComputerChoice = getComputerChoice();
+        emptyComputerChoice.src = theComputerChoice + ".png";
+        game("scissors", theComputerChoice);
+        if(player_score === 5 || computer_score === 5)
+        {
+            highlightWinner();
+        }
     }
 });
