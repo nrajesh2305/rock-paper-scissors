@@ -1,0 +1,177 @@
+body
+{
+    display: flex;
+    background-color: tan;
+    margin: 0;
+    width: 25%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    min-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+/* This will be our entire board, which will hold all of our containers. */
+.general-container
+{
+    display: flex;
+    flex-grow: 1;
+    background-color: #f9be96;
+    border: 10px solid #69543c;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.top-inside-container
+{
+    width: 1210px;
+    height: 375px;
+    position: absolute;
+}
+
+/* Reset the game with this button */
+.reset-button
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9be96;
+    border: 5px solid #69543c;
+    width: 15%;
+    height: 11%;
+    margin-top: 0.2%;
+    margin-left: 40%;
+    color: red;
+    font-size: 30px;
+    position: absolute;
+}
+
+.reset-button:hover
+{
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+/* 3 Buttons have a lot in common, so in order to code this card, we can just use the simple format, then we can manipulate the DOM to change
+the colors of each button as a result.
+*/
+
+.choice-container
+{
+    display: flex;
+    width: 1190px;
+    height: 250px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 35%;
+}
+
+.choice-button
+{
+    display: inline-block;
+    background-color: #FCFCEC;
+    border-radius: 50%;
+    border: 10px solid black;
+    width: 225px;
+    height: 225px;
+}
+
+.choice-button:hover
+{
+    border-color: green;
+    cursor: pointer;
+}
+
+
+.vs-container
+{
+    display: flex;
+    width: 30px;
+    height: 25px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 47%;
+    margin-top: 20%;
+    color: red;
+    background-color: yellow;
+    font-weight: bold;
+    /* We can use position: absolute to make sure we want to affect only this container, not other containers. */
+    position: absolute;
+}
+
+.score-card-container
+{
+    display: flex;
+    width: 254px;
+    height: 153px;
+    border: 10px solid #69543c;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-10px);
+}
+
+.score-card-container-second
+{
+    display: flex;
+    width: 254px;
+    height: 153px;
+    position: absolute;
+    border: 10px solid #69543c;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(925px);
+}
+
+.score_cards
+{
+    font-size: larger;
+    color: #1e1e1e;
+}
+
+
+
+.rock
+{
+    border-radius: 50%;
+    width: 100%;
+    background: transparent;
+}
+
+.paper
+{
+    border-radius: 50%;
+    width: 100%;
+}
+
+.scissors
+{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.user-play
+{
+    display: flex;
+    border-radius: 50%;
+    width: 35%;
+    margin-top: 12.5%;
+    margin-left: 19%;
+    position: absolute;
+}
+
+.computer-play
+{
+    display: flex;
+    border-radius: 50%;
+    width: 35%;
+    margin-top: 12.5%;
+    margin-left: 45%;
+    position: absolute;
+}

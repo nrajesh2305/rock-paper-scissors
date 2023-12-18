@@ -13,39 +13,48 @@
         <div class="top-inside-container">
             
             <div class="score-card-container">
-                <div class="score-cards">
-                    PLAYER SCORE<br>
+                <div class="score_cards" id="player">
+                    PLAYER SCORE<br><br>
+                    <center>
+                        <span id="playerScore">0</span>
+                    </center>
                 </div>
             </div>
 
-            <div class="reset-button">
-                RESET
+            <div class="user-play">
+                <img src="plate.png" alt="User's choice of play" class="user-play" id="empty">
+            </div>
+
+            <button class="reset-button" id="reset">RESET</button>
+            
+            <div class="computer-play">
+                <img src="plate.png" alt="Computer's choice of play" class="computer-play" id="emptyComputer">
             </div>
 
             <div class="score-card-container-second">
-                <div class="score-cards">
-                    COMPUTER SCORE<br>
+                <div class="score_cards" id="computer">
+                    COMPUTER SCORE<br><br>
+                    <center>
+                        <span id="computerScore">0</span>
+                    </center>
                 </div>
             </div>
+            <div class="vs-container">
+                VS
+            </div>
         </div>
-
-        <div class="vs-container">
-            VS
-        </div>
-
         <div class="choice-container">
             <button class="choice-button">
-                ROCK
+                <img src="rock.png" alt="ROCK" class="rock" id="rock">
             </button>
             <button class="choice-button">
-                PAPER
+                <img src="paper.png" alt="paper" class="paper" id="paper">
             </button>
             <button class="choice-button">
-                SCISSORS
+                <img src="scissors.png" alt="scissors" class="scissors" id="scissors">
             </button>
             <!-- Have yet to add a script for this button, add it after finishing all other containers. -->
         </div>
-
-    </div>
+        
 </body>
 </html>
